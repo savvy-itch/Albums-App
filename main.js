@@ -245,8 +245,10 @@ function clearLocalStorage() {
       localStorage.removeItem('title');
       let markBtns = [...resultDiv.querySelectorAll('.new-album > button')];
       markBtns.forEach(btn => {
-        btn.classList.toggle('undo-listened-btn');
-        btn.innerHTML = '<i class="fa-solid fa-check"></i>Mark as listened'
+        if (btn.classList.contains('undo-listened-btn')) {
+          btn.classList.toggle('undo-listened-btn');
+          btn.innerHTML = '<i class="fa-solid fa-check"></i>Mark as listened'
+        }
       });
     }
   }
