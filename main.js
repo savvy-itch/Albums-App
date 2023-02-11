@@ -213,7 +213,7 @@ function getRandomAlbum() {
   let randomIndex = Math.floor(Math.random() * db.length);
   resultDiv.innerHTML = '';
 
-  if (!storedAlbumsArr.includes(db[randomIndex].title)) {
+  if (!listenedAlbums || !storedAlbumsArr.includes(db[randomIndex].title)) {
     displayAlbum(randomIndex);
   } else if (storedAlbumsArr.length === db.length) {
     // If every album in db is marked as listened
@@ -243,6 +243,11 @@ function clearLocalStorage() {
     const confirmMsg = confirm('Are you sure you want to clear all your listened albums?');
     if (confirmMsg) { 
       localStorage.removeItem('title');
+      let markBtns = [...resultDiv.querySelectorAll('.new-album > button')];
+      markBtns.forEach(btn => {
+        btn.classList.toggle('undo-listened-btn');
+        btn.innerHTML = '<i class="fa-solid fa-check"></i>Mark as listened'
+      });
     }
   }
 }
@@ -251,7 +256,6 @@ function checkLongTitles() {
   const albumDivs = [...document.querySelectorAll('.new-album')];
   albumDivs.forEach(div => {
     let albumTitle = div.querySelector('h4');
-    console.log(albumTitle.textContent.length)
     if (albumTitle.textContent.length > 30) {
       albumTitle.style.fontSize = '1rem';
     }

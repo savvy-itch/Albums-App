@@ -86,12 +86,23 @@ h2 {
   display: flex;
   align-self: flex-start;
   justify-content: space-between;
-  max-width: 50%;
-  width: 32%;
+  min-width: 32%;
 }
+
+@media screen and (max-width: 1120px) {
+  .btn-container{
+    min-width: 40%;
+  }
+}
+@media screen and (max-width: 950px) {
+  .btn-container{
+    min-width: 50%;
+  }
+}
+
+
 .btn-container .random-btn {
   background-color: #69757d;
-  /* align-self: flex-start; */
   padding: .9rem 1.1rem;
   margin: 1rem 0;
 }
