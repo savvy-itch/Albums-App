@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Main</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+  <link rel="stylesheet" href="./styles/style.css">
+  <link rel="stylesheet" href="./styles/main.css">
+</head>
+<body>
+  <div class="container full-height-grow">
+    <header class="main-header">
+      <nav>
+        <div class="nav-header">
+          <a href="index.html" class="brand-logo">
+            <i class="fa-solid fa-compact-disc"></i>Records for Moods
+          </a>
+          <button class="nav-toggle">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+        <ul class="nav-links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="main.html">Start Using</a></li>
+          <li><a href="signup.html">Sign Up</a></li>
+          <li><a href="signin.html">Sign In</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section class="main-section">
+      <h2>Select key characteristics of an album:</h2>
+      <form id="album-form" class="form-container">
+        <div class="radio-form-container">
+          <div id="radio-mood" class="radio-key">
+            <p>Choose mood:</p>
+            <label for="mood-all" class="radio-key-container">All
+              <input type="radio" id="mood-all" name="mood" value="all" checked/>
+              <span class="radio-mark"></span>
+            </label>
+            <label for="mood-happy" class="radio-key-container">Happy
+              <input type="radio" id="mood-happy" name="mood" value="happy"/>
+              <span class="radio-mark"></span>
+            </label>
+            <label for="mood-melancholic" class="radio-key-container">Melancholic
+              <input type="radio" id="mood-melancholic" name="mood" value="melancholic"/>
+              <span class="radio-mark"></span>
+            </label>
+            <label for="mood-angry" class="radio-key-container">Angry
+              <input type="radio" id="mood-angry" name="mood" value="angry"/>
+              <span class="radio-mark"></span>
+            </label>
+          </div>
+          <div id="radio-speed" class="radio-key">
+            <p>Choose speed:</p>
+            <label for="speed-all" class="radio-key-container">All
+              <input type="radio" id="speed-all" name="speed" value="all" checked/>
+              <span class="radio-mark"></span>
+            </label>
+            <label for="speed-fast" class="radio-key-container">Fast
+              <input type="radio" id="speed-fast" name="speed" value="fast"/>
+              <span class="radio-mark"></span>
+            </label>
+            <label for="speed-medium" class="radio-key-container">Medium
+              <input type="radio" id="speed-medium" name="speed" value="medium"/>
+              <span class="radio-mark"></span>
+            </label>
+            <label for="speed-slow" class="radio-key-container">Slow
+              <input type="radio" id="speed-slow" name="speed" value="slow" />
+              <span class="radio-mark"></span>
+            </label>
+          </div>
+          <div id="radio-heaviness" class="radio-key">
+            <p>Choose heaviness:</p>
+            <label for="heaviness-all" class="radio-key-container">All
+              <input type="radio" id="heaviness-all" name="heaviness" value="all" checked/>
+              <span class="radio-mark"></span>
+            </label>
+            <label for="heaviness-heavy" class="radio-key-container">Heavy
+              <input type="radio" id="heaviness-heavy" name="heaviness" value="heavy"/>
+              <span class="radio-mark"></span>
+            </label>
+            <label for="heaviness-normal" class="radio-key-container">Normal
+              <input type="radio" id="heaviness-normal" name="heaviness" value="normal" />
+              <span class="radio-mark"></span>
+            </label>
+            <label for="heaviness-light" class="radio-key-container">Light
+              <input type="radio" id="heaviness-light" name="heaviness" value="light" />
+              <span class="radio-mark"></span>
+            </label>
+          </div>
+          <div id="radio-speed" class="radio-key">
+            <p>Choose novelty:</p>
+            <label for="novelty-all" class="radio-key-container">All
+              <input type="radio" id="novelty-all" name="novelty" value="all" checked/>
+              <span class="radio-mark"></span>
+            </label>
+            <label for="novelty-contemporary" class="radio-key-container">Contemporary
+              <input type="radio" id="novelty-contemporary" name="novelty" value="contemporary"/>
+              <span class="radio-mark"></span>
+            </label>
+            <label for="novelty-old" class="radio-key-container">Old
+              <input type="radio" id="novelty-old" name="novelty" value="old" />
+              <span class="radio-mark"></span>
+            </label>
+          </div>
+        </div>
+        <!-- <select name="mood" id="mood">
+          <option value="default" disabled selected>Choose mood</option>
+          <option value="happy">Happy</option>
+          <option value="melancholic">Melancholic</option>
+          <option value="angry">Angry</option>
+        </select>
+        <select name="speed" id="speed">
+          <option value="default" disabled selected>Choose speed</option>
+          <option value="fast">Fast</option>
+          <option value="medium">Medium</option>
+          <option value="slow">Slow</option>
+        </select>
+        <select name="heaviness" id="heaviness">
+          <option value="default" disabled selected>Choose heaviness</option>
+          <option value="heavy">Heavy</option>
+          <option value="normal">Normal</option>
+          <option value="light">Light</option>
+        </select>
+        <select name="novelty" id="novelty">
+          <option value="default" disabled selected>Choose novelty</option>
+          <option value="contemporary">Contemporary</option>
+          <option value="old">Old</option>
+        </select> -->
+        <div class="btn-container">
+          <button type="button" id="random-btn" class="btn random-btn"><i class="fa-solid fa-dice"></i>Random album</button>
+          <button type="button" id="clear-all-btn" class="btn clear-all-btn"><i class="fa-solid fa-trash-can"></i>Clear All</button>
+        </div>
+        <button type="submit" id="submit-btn" class="btn search-btn">Search</button>
+      </form>
+      <div class="result">
+        <!-- output albums from db -->
+      </div>
+    </section>
+  </div>
+  <footer>
+    <div>
+      <a target="_blank" href="https://icons8.com/icon/V1cbDThDpbRc/youtube-music">YouTube Music</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+    </div>
+    <div>
+      <a target="_blank" href="https://icons8.com/icon/AaRQhVc2RY35/spotify">Spotify</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+    </div>
+    <div>
+      <a target="_blank" href="https://icons8.com/icon/9JuyVWSx0NXU/bandcamp-is-an-american-online-music-company">Bandcamp</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+    </div>
+  </footer>
+  <script src="app.js"></script>
+  <script src="db.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

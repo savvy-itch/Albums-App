@@ -1,0 +1,41 @@
+.about-main-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 1;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 30px;
+  border-radius: 10px;
+}
+h2 {
+  font-size: 3rem;
+  font-weight: 500;
+  margin: 1rem 0 2rem 0;
+}
+.about-thesis {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.3rem;
+  padding: 1rem 0;
+}
+.about-thesis img {
+  max-width: 15%;
+  height: auto;
+}
+.about-description {
+  width: 70%;
+}
+.about-btn {
+  margin: 2rem 0;
+}
+
+@media screen and (max-width: 800px) {
+  html {
+    font-size: 12px;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+}

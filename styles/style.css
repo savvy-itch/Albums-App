@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+/* #ff9a2f */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  --text-color: hsl(0, 0%, 90%);
+  --selection-color: #ff9a2f;
+  
+  background: linear-gradient(to bottom, hsl(235, 30%, 18%), hsl(228, 35%, 34%));
+  min-height: 100vh;
+  font-family: Poppins, sans-serif;
+  font-size: 1.2rem;
+}
+
+/* --------- Navbar ---------- */
+/* .main-header {
+  background-color: hsl(235, 30%, 21%);
+} */
+.main-header a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+nav {
+  /* position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100; */
+  max-width: 1300px;
+}
+.nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+.brand-logo i {
+  padding: .5rem;
+  font-size: 2rem;
+}
+.nav-links {
+  list-style: none;
+  height: 0;
+  overflow: hidden;
+  transition: .2s;
+}
+.nav-links li {
+  padding: 0 1rem;
+}
+.nav-links a:hover {
+  color: var(--selection-color);
+  transition: .2s;
+}
+
+.nav-toggle {
+  font-size: 1.5rem;
+  color: var(--text-color);;
+  background: transparent;
+  border-color: transparent;
+  transition: .2s;
+  cursor: pointer;
+}
+.nav-toggle:hover {
+  transform: rotate(90deg);
+}
+.show-links {
+  height: 10rem;
+}
+
+@media screen and (min-width: 850px) {
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 120px;
+    font-size: 1.5rem;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+  .nav-toggle {
+    display: none;
+  }
+  .nav-links {
+    height: auto;
+    display: flex;
+  }
+}
+
+/* ----------- Main Section -------- */
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 40px;
+  flex-grow: 1;
+}
+.full-height-grow {
+  display: flex;
+  flex-direction: column;
+  /* adding flex-grow: 1 to children elements takes 100% of height */
+}
+h1 {
+  font-size: 3.7rem;
+  font-weight: 500;
+}
+.btn {
+  font-size: 1.2rem;
+  color: var(--text-color);
+  background-color: #3e73a5;
+  padding: .9rem 1.8rem;
+  border-radius: .5rem;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: .2s;
+}
+.btn:hover {
+  background-color: hsl(209, 73%, 59%);
+}
+.btn:focus {
+  background-color: #2796ff;
+}
+span {
+  color: var(--selection-color);
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    padding: 0;
+  }
+}
