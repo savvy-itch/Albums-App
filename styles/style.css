@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
-/* #ff9a2f */
+
 * {
   padding: 0;
   margin: 0;
@@ -16,19 +16,15 @@ body {
 }
 
 /* --------- Navbar ---------- */
-/* .main-header {
-  background-color: hsl(235, 30%, 21%);
-} */
+.main-header {
+  z-index: 30;
+}
+
 .main-header a {
   color: var(--text-color);
   text-decoration: none;
 }
 nav {
-  /* position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100; */
   max-width: 1300px;
 }
 .nav-header {
@@ -54,7 +50,6 @@ nav {
   color: var(--selection-color);
   transition: .2s;
 }
-
 .nav-toggle {
   font-size: 1.5rem;
   color: var(--text-color);;
@@ -106,10 +101,10 @@ h1 {
   font-weight: 500;
 }
 .btn {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: var(--text-color);
   background-color: #3e73a5;
-  padding: .9rem 1.8rem;
+  padding: 1rem 1.9rem;
   border-radius: .5rem;
   text-decoration: none;
   outline: none;

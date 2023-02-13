@@ -12,6 +12,7 @@ h2 {
   font-size: 3rem;
   font-weight: 500;
   margin: 1rem 0 2rem 0;
+  text-align: center;
 }
 .about-thesis {
   display: flex;
@@ -37,5 +38,8 @@ h2 {
   }
   h2 {
     font-size: 2rem;
+  }
+  .about-thesis img {
+    max-width: 25%;
   }
 }
