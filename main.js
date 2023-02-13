@@ -19,6 +19,7 @@ form.addEventListener('submit', (e) => {
   // handle selecting every 'all' option
   if (selectedValues.every(elem => elem[1] === 'all')) {
     displayErrorMessage('Please choose some values');
+    centerSingleElement();
   } else {
     // check db for matching values
     checkDB(selectedValues);
@@ -28,6 +29,7 @@ form.addEventListener('submit', scrollToResults);
 
 function displayErrorMessage(error) {
   let negativeResponse = document.createElement('p');
+  negativeResponse.className = 'error-message';
   negativeResponse.innerHTML = `${error}`;
   resultDiv.append(negativeResponse);
 }
@@ -102,12 +104,14 @@ function checkDB(array) {
   // no matches
   if (filtered.length < 1) {
     displayErrorMessage('Sorry, no matches were found. Try again <i class="fa-regular fa-face-frown"></i>');
+    centerSingleElement();
   }
 
   // display albums
   for (let i = 0; i < filtered.length; i++) {
     displayAlbum(filtered[i]);
   }
+  centerSingleElement();
   checkStorageForListenedAlbums();
   checkLongTitles();
 }
@@ -153,6 +157,14 @@ function displayAlbum(i) {
         </a>
       </div>`;
   resultDiv.append(newAlbum);
+}
+
+function centerSingleElement() {
+  if (resultDiv.children.length === 1 && !resultDiv.classList.contains('result-center')) {
+    resultDiv.classList.add('result-center');
+  } else if (resultDiv.children.length > 1 && resultDiv.classList.contains('result-center')) {
+    resultDiv.classList.remove('result-center');
+  };
 }
 
 // Show/hide listened albums
@@ -215,9 +227,11 @@ function getRandomAlbum() {
 
   if (!listenedAlbums || !storedAlbumsArr.includes(db[randomIndex].title)) {
     displayAlbum(randomIndex);
+    centerSingleElement();
   } else if (storedAlbumsArr.length === db.length) {
     // If every album in db is marked as listened
     displayErrorMessage('Sorry, no matches were found <i class="fa-regular fa-face-frown"></i>');
+    centerSingleElement();
   } else {
     // if album is marked as already listened
     getRandomAlbum();
