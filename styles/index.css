@@ -33,7 +33,7 @@ canvas {
   justify-content: flex-end;
 }
 .lady-image {
-  background-image: url("../images/girl-img.png");
+  background-image: url("./images/girl-img.png");
   flex-grow: 1;
   max-height: 70vh;
   min-width: 30%;
