@@ -24,7 +24,7 @@ form.addEventListener('submit', (e) => {
     // check db for matching values
     checkDB(selectedValues);
   }
-})
+});
 form.addEventListener('submit', scrollToResults);
 
 function displayErrorMessage(error) {
@@ -36,16 +36,6 @@ function displayErrorMessage(error) {
 
 function checkDB(array) {
   // store db indexes of all matches
-
-  // function getFirstElement (array = [[null, null]], index = 0) {
-  //   return array[index][1];
-  // }
-  // for (let i = 0; i < db.length; i++) {
-  //   const mood = getFirstElement(array, 0);
-  //   if (mood !== 'all' && db[i].mood === mood) {
-  //     moodInd.push(i);
-  //   }
-  // }
 
   let moodInd = [];
   let speedInd = [];
@@ -81,7 +71,6 @@ function checkDB(array) {
   if (noveltyInd.length === 0) {
     numberOfCharacteristics--;
   }
-
 
   let allIndexes = moodInd.concat(speedInd, heavinessInd, noveltyInd);
   let filtered = [];
@@ -126,14 +115,13 @@ function checkStorageForListenedAlbums() {
 
     displayedDivs.forEach(div => {
       for (let el of storedAlbumsArr) {
-        // проверить, что быстрее - innerText или textContent
-        if (div.querySelector('h4').innerText === el) {
+        if (div.querySelector('h4').textContent === el) {
           let divBtn = div.querySelector('.mark-listened-btn');
           divBtn.classList.add('undo-listened-btn');
           divBtn.innerHTML = '<i class="fa-solid fa-rotate-right"></i>Mark as unlistened';
         } 
       }
-    })
+    });
   }
 }
 
@@ -150,9 +138,9 @@ function displayAlbum(i) {
             <img src="./images/spotify-icon.png" alt="spotify icon">
           </div>
         </a>
-        <a href="${db[i].bandcampUrl}" target="_blank">
+        <a href="${db[i].youtubemusicUrl}" target="_blank">
           <div class="album-icon">
-            <img src="./images/bandcamp-icon3.png" alt="bandcamp icon">
+            <img src="./images/youtube-music-icon.png" alt="youtube music icon">
           </div>
         </a>
       </div>`;
@@ -164,15 +152,15 @@ function centerSingleElement() {
     resultDiv.classList.add('result-center');
   } else if (resultDiv.children.length > 1 && resultDiv.classList.contains('result-center')) {
     resultDiv.classList.remove('result-center');
-  };
+  }
 }
 
-// Show/hide listened albums
+// Toggle mark listened albums button
 resultDiv.addEventListener("click", function(e) {
   if (e.target && e.target.matches(".mark-listened-btn")) {
     const markBtn = e.target;
     markBtn.classList.toggle('undo-listened-btn');
-    let currentAlbumTitle = markBtn.nextElementSibling.nextElementSibling.innerText;
+    let currentAlbumTitle = markBtn.nextElementSibling.nextElementSibling.textContent;
     if (markBtn.classList.contains('undo-listened-btn')) {
       markBtn.innerHTML = '<i class="fa-solid fa-rotate-right"></i>Mark as unlistened';
       addToLocalStorage(currentAlbumTitle);
@@ -261,13 +249,14 @@ function clearLocalStorage() {
       markBtns.forEach(btn => {
         if (btn.classList.contains('undo-listened-btn')) {
           btn.classList.toggle('undo-listened-btn');
-          btn.innerHTML = '<i class="fa-solid fa-check"></i>Mark as listened'
+          btn.innerHTML = '<i class="fa-solid fa-check"></i>Mark as listened';
         }
       });
     }
   }
 }
 
+// Shrink font-size for long titles
 function checkLongTitles() {
   const albumDivs = [...document.querySelectorAll('.new-album')];
   albumDivs.forEach(div => {
@@ -275,5 +264,5 @@ function checkLongTitles() {
     if (albumTitle.textContent.length > 30) {
       albumTitle.style.fontSize = '1rem';
     }
-  })
+  });
 }

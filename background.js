@@ -1,11 +1,10 @@
-// reduce amount and size of balls on small screen and/or let them pass the screen borders 
 const canvas = document.querySelector('canvas');
 const ctx = canvas.getContext('2d');
 
 const width = canvas.width = window.innerWidth;
 const height = canvas.height = window.innerHeight;
 
-// function to generate random number
+// generate random number
 function random(min, max) {
   const num = Math.floor(Math.random() * (max - min + 1)) + min;
   // prevent balls from standing still
@@ -15,7 +14,7 @@ function random(min, max) {
   return num;
 }
 
-// function to generate random color
+// generate random color for balls
 function randomRGBA() {
   return `rgba(0,0,${random(10, 70)}, .18)`;
 }
@@ -58,6 +57,7 @@ const balls = [];
 
 let amount;
 if (width < 700) {
+  // for small screen
   amount = 5;
 } else {
   amount = 8;
@@ -93,4 +93,3 @@ function loop() {
   requestAnimationFrame(loop);
 }
 loop();
-console.log(width);

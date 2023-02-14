@@ -51,6 +51,10 @@
               <input type="radio" id="mood-angry" name="mood" value="angry"/>
               <span class="radio-mark"></span>
             </label>
+            <label for="mood-relaxing" class="radio-key-container">Relaxing
+              <input type="radio" id="mood-relaxing" name="mood" value="relaxing"/>
+              <span class="radio-mark"></span>
+            </label>
           </div>
           <div id="radio-speed" class="radio-key">
             <p>Choose speed:</p>
@@ -106,29 +110,6 @@
             </label>
           </div>
         </div>
-        <!-- <select name="mood" id="mood">
-          <option value="default" disabled selected>Choose mood</option>
-          <option value="happy">Happy</option>
-          <option value="melancholic">Melancholic</option>
-          <option value="angry">Angry</option>
-        </select>
-        <select name="speed" id="speed">
-          <option value="default" disabled selected>Choose speed</option>
-          <option value="fast">Fast</option>
-          <option value="medium">Medium</option>
-          <option value="slow">Slow</option>
-        </select>
-        <select name="heaviness" id="heaviness">
-          <option value="default" disabled selected>Choose heaviness</option>
-          <option value="heavy">Heavy</option>
-          <option value="normal">Normal</option>
-          <option value="light">Light</option>
-        </select>
-        <select name="novelty" id="novelty">
-          <option value="default" disabled selected>Choose novelty</option>
-          <option value="contemporary">Contemporary</option>
-          <option value="old">Old</option>
-        </select> -->
         <div class="btn-container">
           <button type="button" id="random-btn" class="btn random-btn"><i class="fa-solid fa-dice"></i>Random album</button>
           <button type="button" id="clear-all-btn" class="btn clear-all-btn"><i class="fa-solid fa-trash-can"></i>Clear All</button>
@@ -141,15 +122,17 @@
     </section>
   </div>
   <footer>
-    <div>
-      <a target="_blank" href="https://icons8.com/icon/V1cbDThDpbRc/youtube-music">YouTube Music</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+    <div class="icons-reference">
+      <div>
+        <a target="_blank" href="https://icons8.com/icon/V1cbDThDpbRc/youtube-music">YouTube Music</a> icon by 
+        <a target="_blank" href="https://icons8.com">Icons8</a>
+      </div>
+      <div>
+        <a target="_blank" href="https://icons8.com/icon/AaRQhVc2RY35/spotify">Spotify</a> icon by 
+        <a target="_blank" href="https://icons8.com">Icons8</a>
+      </div>
     </div>
-    <div>
-      <a target="_blank" href="https://icons8.com/icon/AaRQhVc2RY35/spotify">Spotify</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
-    </div>
-    <div>
-      <a target="_blank" href="https://icons8.com/icon/9JuyVWSx0NXU/bandcamp-is-an-american-online-music-company">Bandcamp</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
-    </div>
+    <p>Developed by Mykhailo Savych</p>
   </footer>
   <script src="app.js"></script>
   <script src="db.js"></script>
