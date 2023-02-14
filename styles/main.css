@@ -1,6 +1,5 @@
 body {
   position: relative;
-  scroll-behavior: smooth;
 }
 h2 {
   color: var(--text-color);
@@ -51,29 +50,23 @@ h2 {
   background-color: #eee;
   border-radius: 50%;
 }
-/* On mouse-over, add a grey background color */
 .radio-key-container:hover input ~ .radio-mark {
   background-color: #ccc;
 }
-
-/* When the radio button is checked, add a blue background */
+/* When the radio button is checked */
 .radio-key-container input:checked ~ .radio-mark {
   background-color: var(--selection-color);
 }
-
-/* Create the indicator (the dot/circle - hidden when not checked) */
+/* Create the indicator*/
 .radio-mark:after {
   content: "";
   position: absolute;
   display: none;
 }
-
-/* Show the indicator (dot/circle) when checked */
+/* Show the indicator when checked */
 .radio-key-container input:checked ~ .radio-mark:after {
   display: block;
 }
-
-/* Style the indicator (dot/circle) */
 .radio-key-container .radio-mark:after {
   top: 8px;
   left: 8px;
@@ -99,8 +92,6 @@ h2 {
     min-width: 50%;
   }
 }
-
-
 .btn-container .random-btn {
   background-color: #69757d;
   padding: .9rem 1.1rem;
@@ -123,17 +114,12 @@ h2 {
 .clear-all-btn:hover {
   background-color: hsl(0, 100%, 38%);
 }
-
-
 .search-btn {
   width: 80%;
   margin: 3rem 0 1rem 0;
 }
 
 @media screen and (max-width: 800px) {
-  html {
-    font-size: 12px;
-  }
   .radio-form-container {
     flex-direction: column;
     padding: 0 1rem;
@@ -148,7 +134,6 @@ h2 {
   }
 }
 
-
 /* ----- Result Div ------------- */
 .result {
   display: grid;
@@ -158,6 +143,12 @@ h2 {
   justify-content: center;
   align-items: center;
   margin: 1rem 0 120px 0;
+}
+@media screen and (max-width: 400px) {
+  .result {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
 }
 .main-section > .result-center {
   display: flex;
@@ -240,7 +231,8 @@ h2 {
 /* ---------- Footer ----------- */
 footer {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
   background-color: hsl(220, 10%, 18%);
   color: var(--text-color);
   font-size: .9rem;
@@ -252,6 +244,10 @@ footer {
   padding: 1rem 2rem;
   margin-top: 1rem;
   border-top: 4px solid hsl(0, 0%, 75%);
+}
+.icons-reference {
+  display: flex;
+  flex-direction: column;
 }
 footer a {
   color: var(--text-color);

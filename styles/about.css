@@ -33,9 +33,6 @@ h2 {
 }
 
 @media screen and (max-width: 800px) {
-  html {
-    font-size: 12px;
-  }
   h2 {
     font-size: 2rem;
   }

@@ -13,13 +13,13 @@ body {
   min-height: 100vh;
   font-family: Poppins, sans-serif;
   font-size: 1.2rem;
+  scroll-behavior: smooth;
 }
 
 /* --------- Navbar ---------- */
 .main-header {
   z-index: 30;
 }
-
 .main-header a {
   color: var(--text-color);
   text-decoration: none;
@@ -44,7 +44,7 @@ nav {
   transition: .2s;
 }
 .nav-links li {
-  padding: 0 1rem;
+  padding: .3rem 1rem;
 }
 .nav-links a:hover {
   color: var(--selection-color);
@@ -73,7 +73,7 @@ nav {
     height: 120px;
     font-size: 1.5rem;
     margin: 0 auto;
-    padding: 0 40px;
+    /* padding: 0 40px; */
   }
   .nav-toggle {
     display: none;
@@ -81,6 +81,11 @@ nav {
   .nav-links {
     height: auto;
     display: flex;
+  }
+}
+@media screen and (max-width: 800px) {
+  html {
+    font-size: 12px;
   }
 }
 

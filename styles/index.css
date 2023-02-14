@@ -3,10 +3,8 @@ canvas {
   position: absolute;
   left: 0;
 }
-
 .home-main-section {
   z-index: 30;
-
   display: flex;
   align-items: stretch;
   justify-content: space-between;
@@ -33,7 +31,7 @@ canvas {
   justify-content: flex-end;
 }
 .lady-image {
-  background-image: url("./images/girl-img.png");
+  background-image: url("../images/girl-img.png");
   flex-grow: 1;
   max-height: 70vh;
   min-width: 30%;
@@ -54,9 +52,6 @@ canvas {
   }
 }
 @media screen and (max-width: 700px) {
-  html {
-    font-size: 12px;
-  }
   h1 {
     text-align: center;
   }
