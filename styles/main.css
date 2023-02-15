@@ -102,21 +102,37 @@ h2 {
   font-size: 1.3rem;
   padding-right: .5rem;
 }
-.random-btn:hover {
+/* .random-btn:hover {
   background-color: var(--text-color);
   color: black;
-}
+} */
 .btn-container .clear-all-btn {
   background-color: #f40000;
   padding: .9rem 1.1rem;
   margin: 1rem 0;
 }
-.clear-all-btn:hover {
+/* .clear-all-btn:hover {
   background-color: hsl(0, 100%, 38%);
-}
+} */
 .search-btn {
   width: 80%;
   margin: 3rem 0 1rem 0;
+}
+/* fix sticky hover on touch screens */
+@media (hover: hover) {
+  .random-btn:hover {
+    background-color: var(--text-color);
+    color: black;
+  }
+  .clear-all-btn:hover {
+    background-color: hsl(0, 100%, 38%);
+  }
+  .mark-listened-btn:hover {
+    background-color: hsl(150, 100%, 23%);
+  }
+  .undo-listened-btn:hover {
+    background-color: hsl(0, 0%, 40%);
+  }
 }
 
 @media screen and (max-width: 800px) {
@@ -193,15 +209,15 @@ h2 {
 .undo-listened-btn i {
   padding: 0 .2rem 0 0;
 }
-.mark-listened-btn:hover {
+/* .mark-listened-btn:hover {
   background-color: hsl(150, 100%, 23%);
-}
+} */
 .undo-listened-btn {
   background-color: gray;
 }
-.undo-listened-btn:hover {
+/* .undo-listened-btn:hover {
   background-color: hsl(0, 0%, 40%);
-}
+} */
 
 .album-img {
   max-width: 190px;

@@ -117,11 +117,17 @@ h1 {
   cursor: pointer;
   transition: .2s;
 }
-.btn:hover {
+/* .btn:hover {
   background-color: hsl(209, 73%, 59%);
-}
+} */
 .btn:focus {
   background-color: #2796ff;
+}
+/* fix sticky hover on touch screens */
+@media (hover: hover) {
+  .btn:hover {
+    background-color: hsl(209, 73%, 59%);
+  }
 }
 span {
   color: var(--selection-color);
