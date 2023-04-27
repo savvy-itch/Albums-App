@@ -1,3 +1,4 @@
+// collapse menu on small screens
 const navToggle = document.querySelector('.nav-toggle');
 const navLinks = document.querySelector('.nav-links');
 

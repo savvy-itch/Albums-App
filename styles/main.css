@@ -1,6 +1,5 @@
 body {
   position: relative;
-  scroll-behavior: smooth;
 }
 h2 {
   color: var(--text-color);
@@ -51,29 +50,23 @@ h2 {
   background-color: #eee;
   border-radius: 50%;
 }
-/* On mouse-over, add a grey background color */
 .radio-key-container:hover input ~ .radio-mark {
   background-color: #ccc;
 }
-
-/* When the radio button is checked, add a blue background */
+/* When the radio button is checked */
 .radio-key-container input:checked ~ .radio-mark {
   background-color: var(--selection-color);
 }
-
-/* Create the indicator (the dot/circle - hidden when not checked) */
+/* Create the indicator*/
 .radio-mark:after {
   content: "";
   position: absolute;
   display: none;
 }
-
-/* Show the indicator (dot/circle) when checked */
+/* Show the indicator when checked */
 .radio-key-container input:checked ~ .radio-mark:after {
   display: block;
 }
-
-/* Style the indicator (dot/circle) */
 .radio-key-container .radio-mark:after {
   top: 8px;
   left: 8px;
@@ -89,7 +82,7 @@ h2 {
   min-width: 32%;
 }
 
-@media screen and (max-width: 1120px) {
+@media screen and (max-width: 1200px) {
   .btn-container{
     min-width: 40%;
   }
@@ -99,8 +92,6 @@ h2 {
     min-width: 50%;
   }
 }
-
-
 .btn-container .random-btn {
   background-color: #69757d;
   padding: .9rem 1.1rem;
@@ -111,29 +102,40 @@ h2 {
   font-size: 1.3rem;
   padding-right: .5rem;
 }
-.random-btn:hover {
+/* .random-btn:hover {
   background-color: var(--text-color);
   color: black;
-}
+} */
 .btn-container .clear-all-btn {
   background-color: #f40000;
   padding: .9rem 1.1rem;
   margin: 1rem 0;
 }
-.clear-all-btn:hover {
+/* .clear-all-btn:hover {
   background-color: hsl(0, 100%, 38%);
-}
-
-
+} */
 .search-btn {
   width: 80%;
   margin: 3rem 0 1rem 0;
 }
+/* fix sticky hover on touch screens */
+@media (hover: hover) {
+  .random-btn:hover {
+    background-color: var(--text-color);
+    color: black;
+  }
+  .clear-all-btn:hover {
+    background-color: hsl(0, 100%, 38%);
+  }
+  .mark-listened-btn:hover {
+    background-color: hsl(150, 100%, 23%);
+  }
+  .undo-listened-btn:hover {
+    background-color: hsl(0, 0%, 40%);
+  }
+}
 
 @media screen and (max-width: 800px) {
-  html {
-    font-size: 12px;
-  }
   .radio-form-container {
     flex-direction: column;
     padding: 0 1rem;
@@ -148,7 +150,6 @@ h2 {
   }
 }
 
-
 /* ----- Result Div ------------- */
 .result {
   display: grid;
@@ -157,8 +158,22 @@ h2 {
   gap: 2rem;
   justify-content: center;
   align-items: center;
-  /* margin-bottom: 100px; */
   margin: 1rem 0 120px 0;
+}
+@media screen and (max-width: 400px) {
+  .result {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
+.main-section > .result-center {
+  display: flex;
+}
+.error-message {
+  color: hsl(0, 90%, 70%);
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 2rem 0;
 }
 .new-album {
   display: flex;
@@ -171,10 +186,10 @@ h2 {
   padding: .8rem;
   margin: 1rem;
   background-color: rgba(255, 255, 255, .18);
-  /* height: 370px; */
   height: 100%;
   width: 100%;
   max-height: fit-content;
+  max-width: 360px;
   justify-self: center;
 }
 .mark-btn {
@@ -194,15 +209,15 @@ h2 {
 .undo-listened-btn i {
   padding: 0 .2rem 0 0;
 }
-.mark-listened-btn:hover {
+/* .mark-listened-btn:hover {
   background-color: hsl(150, 100%, 23%);
-}
+} */
 .undo-listened-btn {
   background-color: gray;
 }
-.undo-listened-btn:hover {
+/* .undo-listened-btn:hover {
   background-color: hsl(0, 0%, 40%);
-}
+} */
 
 .album-img {
   max-width: 190px;
@@ -232,7 +247,8 @@ h2 {
 /* ---------- Footer ----------- */
 footer {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
   background-color: hsl(220, 10%, 18%);
   color: var(--text-color);
   font-size: .9rem;
@@ -244,6 +260,10 @@ footer {
   padding: 1rem 2rem;
   margin-top: 1rem;
   border-top: 4px solid hsl(0, 0%, 75%);
+}
+.icons-reference {
+  display: flex;
+  flex-direction: column;
 }
 footer a {
   color: var(--text-color);
